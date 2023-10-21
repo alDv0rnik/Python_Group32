@@ -1,1 +1,1 @@
-git init
+my first hometask
