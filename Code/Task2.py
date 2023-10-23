@@ -6,3 +6,10 @@
 Сумма a + b = 7
 Разница a - b = 3
 """
+a = int(input())
+b = int(input())
+
+print(pow(a, b))
+print(a * b)
+print(a + b)
+print(a - b)
