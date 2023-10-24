@@ -1,0 +1,23 @@
+#Task 1
+length = 250
+velocity = 80
+time = length / velocity
+print(f'При скорости {velocity} можно пройти расстояние {length} за {time}'#)
+
+#Task 2
+age = int(input('Введите возраст '))
+name = input('Введите имя ')
+print('My name is '+name+' and I am '+str(age))
+
+#Task 3
+num = int(input('Введите трехзначное число '))
+sum = num // 100 % 10 + num // 10 % 10 + num % 10
+print(f'Сумма цифр числа {num} равна {sum}')
+
+#Task 4
+from math import sqrt, pow
+x1, y1 = map(int,input('Введите 2 координаты 1 точки через пробел ').split())
+x2, y2 = map(int,input('Введите 2 координаты 2 точки через пробел ').split())
+sum = sqrt(pow(x1-x2, 2) + pow(y1-y2, 2))
+print(f'Растояние между точками с координатами {x1}.{y1} и {x2}.{y2} равно {sum}')
+
