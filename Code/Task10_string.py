@@ -6,3 +6,6 @@
 заказ, шашки, топот, торт
 
 """
+word = input()
+# print(word[::-1] == word)
+print("Палиндром") if word[::-1] == word else print("Не палиндром")

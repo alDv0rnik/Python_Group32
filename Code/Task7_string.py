@@ -5,3 +5,5 @@
 Фамилия: Иванов
 Возраст: 25
 """
+fname, lname, age = input(), input(), input()
+print(f"Имя: {fname}", f"Фамилия: {lname}", f"Возраст: {age}", sep="\n")
