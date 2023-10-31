@@ -1,0 +1,28 @@
+mkdir Lesson1
+cd Lesson1
+git init
+nano Text.txt 
+git add Text.txt  
+git commit -m "..."
+new repository GitHub
+git remote add origin https://github.com/... 
+git push origin master
+git branch develop
+git checkout develop
+git checkout -b develop2 develop
+nano Text.txt
+git add Text.txt
+git commit -m "..."
+git push origin mydevelop
+git clone https://github.com/...
+git checkout -b develop3 develop
+nano Text.txt
+git add Text.txt
+git commit -m "..."
+git checkout develop
+git merge develop2
+git merge develop3
+resolve the conflict:
+nano Text.txt
+git add Text.txt
+git commit -m "..."
