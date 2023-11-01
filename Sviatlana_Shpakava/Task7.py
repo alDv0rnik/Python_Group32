@@ -1,0 +1,5 @@
+funnystring = str(input())
+indexstart = funnystring.find("ша", 0)
+indexend = funnystring.find("ша", -1)
+print(indexstart)
+print(indexend)
