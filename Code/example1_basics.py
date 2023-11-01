@@ -5,7 +5,7 @@ b1 = False
 
 print(sys.getsizeof(a1))
 print(sys.getsizeof(b1))
-print(sys.getsizeof(b1))
+# print(sys.getsizeof(b1))
 
 
 
@@ -16,6 +16,7 @@ d = -2
 a_ = 0  # 0 == False
 b_ = 0.0
 c_ = ""
+d_ = None
 
 print(bool(a))
 
@@ -30,5 +31,7 @@ print(bool(a_))
 print(bool(b_))
 
 print(bool(c_))
+print(bool(d_))
+
 
 print({True: "a", 1: "b", 1.0: "c"})

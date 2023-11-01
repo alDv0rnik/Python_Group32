@@ -1,6 +1,6 @@
 # 1
-if 1 and (0 or (1 and 0)):
-    print('first')
+# if 1 and (0 or (1 and 0)):
+#     print('first')
 
 # 2
 
