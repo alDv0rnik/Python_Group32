@@ -1,0 +1,45 @@
+#Task 1
+length = 250
+velocity = 80
+time = length / velocity
+print(f'При скорости {velocity} можно пройти расстояние {length} за {time}'#)
+
+#Task 2
+age = int(input('Введите возраст '))
+name = input('Введите имя ')
+print('My name is '+name+' and I am '+str(age))
+
+#Task 3
+num = int(input('Введите трехзначное число '))
+sum = num // 100 % 10 + num // 10 % 10 + num % 10
+print(f'Сумма цифр числа {num} равна {sum}')
+
+#Task 4
+from math import sqrt, pow
+x1, y1 = map(int,input('Введите 2 координаты 1 точки через пробел ').split())
+x2, y2 = map(int,input('Введите 2 координаты 2 точки через пробел ').split())
+sum = sqrt(pow(x1-x2, 2) + pow(y1-y2, 2))
+print(f'Растояние между точками с координатами {x1}.{y1} и {x2}.{y2} равно {sum}')
+
+#Task 5
+str_='it_step_course'
+str_=str_.replace('_',' ').title().replace(' ','')
+str_=str_[0].lower()+str_[1:]
+print(str_)
+
+#Task 6
+str_='8(029)321-65-87'
+str_=str_.replace('-','')
+print('+375'+str_[3:5]+str_[6:])
+
+#Task 7
+str1=input('введите строку ').lower()
+str2=input('введите строку ').lower()
+print('первый индекс вхождения '+str(str1.find(str2))) #15
+print('последний индекс вхождения '+str(str1.rfind(str2))) #31
+
+#Task 8
+str_='Python - самый простой язык программирования'
+sum=str_.count(' ')
+print(sum, len(str_)-sum) #5 39
+
