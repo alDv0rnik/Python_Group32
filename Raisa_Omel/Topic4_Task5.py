@@ -1,11 +1,8 @@
 num = int(input('введите число '))
-lst1=[10,9,5,4,1]
-lst2=['X','IX','V','IV','I']
-ind=-1
+dct={'X':10,'IX':9,'V':5,'IV':4,'I':1}
 str_=''
-for sign in lst1:
-    ind+=1
-    while num>=sign:
-        str_+=lst2[ind]
-        num-=sign
+for key, value in dct.items():
+    while num>=value:
+        str_+=key
+        num-=value
 print(str_)
