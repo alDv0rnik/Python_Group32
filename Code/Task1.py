@@ -4,3 +4,19 @@
 
 5124956332
 """
+num = input()
+res = ""
+# for i in num:
+#     if int(i) > 4:
+#         res += "1"
+#     else:
+#         res += "0"
+# print(res)
+
+
+for i in range(len(num)):
+    if int(num[i]) > 4:
+        res += "1"
+    else:
+        res += "0"
+print(res)
