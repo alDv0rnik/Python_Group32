@@ -1,14 +1,61 @@
 # append
+lst = list(range(5))
+print(lst)
+#
+# lst.append(6)
+# print(lst)
+#
+# lst = []
+# for i in range(5):
+#     lst.append(i)
+#     print(lst)
 
-import functools
 
-# initializing list
-lis = [1, 3, 5, 6, 2]
+# clear
+# lst.clear()
+# print(lst)
 
-# using reduce to compute sum of list
-print("The sum of the list elements is : ", end="")
-print(functools.reduce(lambda a, b: a + b, lis))
+# count
+# lst.append(4)
+# print(lst.count(4))
 
-# using reduce to compute maximum element from list
-print("The maximum element of the list is : ", end="")
-print(functools.reduce(lambda a, b: a if a > b else b, lis))
+
+# extend
+# t = "text"
+# s = list(t)
+# print(s)
+
+# lst1 = ['a', 'b']
+# lst.extend(lst1)
+# print(lst)
+
+# index
+lst1 = ['a', 'b', 1, 1, 2, 4, 5, 5, 6]
+# print(lst1.index('a', 3, 5))
+
+# insert
+lst1.insert(3, 'c')
+print(lst1)
+
+# tpl1 = (1, 2, 3)
+# tpl1.insert(2, 'c')
+
+# pop
+
+elem = lst1.pop(4) # index = -1
+print(lst1)
+print(elem)
+
+# remove
+lst1.remove(5)
+print(lst1)
+
+# sort
+lst2 = [9, 5, 1, 3, 4, 6, 2, 8, 7]
+lst2.sort(reverse=False, key=lambda x: x % 2 == 0) # sorted
+# lst3 = sorted(lst2)
+print(lst2)
+
+tpl1 = (9, 5, 1, 3, 4, 6, 2, 8, 7)
+print(sorted(tpl1))
+
