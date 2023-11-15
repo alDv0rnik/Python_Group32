@@ -6,12 +6,8 @@
 2 1 4 5 56 6 8 7 14 33
 
 1 4 5 6 7 8
-<<<<<<< HEAD
 """
 
 str1 = set(map(int, "4 12 6 11 0 8 7 5 1 25".split()))
 str2 = set(map(int, "2 1 4 5 56 6 8 7 14 33".split()))
 print(*list(str1 & str2))
-=======
-"""
->>>>>>> 4f2f10f42747aa72c071cb03015c264c2ad42f6f

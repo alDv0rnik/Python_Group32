@@ -39,6 +39,7 @@ operations = {
     "execute": "X"
 }
 files = {}
+tmp = []
 
 n = int(input())
 for i in range(n):
@@ -48,4 +49,9 @@ m = int(input())
 for i in range(m):
     data_ = input().split()
     operation = operations.get(data_[0])
-    print("Ok" if operation in files.get(data_[1]) else "Access denied")
+    if operation in files.get(data_[1]):
+        tmp.append("Ok")
+    else:
+        tmp.append("Access denied")
+
+print(*tmp, sep="\n")
