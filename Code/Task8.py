@@ -1,5 +1,6 @@
 """
-Вирус повредил систему прав доступа к файлам. Известно, что над каждым файлом можно производить определенные действия:
+Вирус повредил систему прав доступа к файлам.
+Известно, что над каждым файлом можно производить определенные действия:
 
 запись – W;
 чтение – R;
@@ -31,3 +32,20 @@ OK
 OK
 OK
 """
+
+operations = {
+    "read": "R",
+    "write": "W",
+    "execute": "X"
+}
+files = {}
+
+n = int(input())
+for i in range(n):
+    data = input().split()
+    files[data[0]] = data[1:]
+m = int(input())
+for i in range(m):
+    data_ = input().split()
+    operation = operations.get(data_[0])
+    print("Ok" if operation in files.get(data_[1]) else "Access denied")

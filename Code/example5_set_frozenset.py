@@ -1,58 +1,25 @@
-# Sets
-# Set union method
-# initialize A and B
-A = {1, 2, 3, 4, 5}
-B = {4, 5, 6, 7, 8}
+from sys import getsizeof
 
-# use | operator
-# Output: {1, 2, 3, 4, 5, 6, 7, 8}
-print(A | B)
-print(A.union(B))
+a = []
+b = {}
+c = set()
+d = frozenset()
 
+print(getsizeof(a))
+print(getsizeof(b))
+print(getsizeof(c))
+print(getsizeof(d))
 
-# Intersection of sets
-# initialize A and B
-A = {1, 2, 3, 4, 5}
-B = {4, 5, 6, 7, 8}
+lst = [1, 1, 2, 3, 5, 5, 5]
+set_ = set(lst)
+print(set_)
 
-# use & operator
-# Output: {4, 5}
-print(A & B)
-print(A.intersection(B))
+s = "kashkashdfs"
+print(set(s))
 
-# Difference of two sets
-# initialize A and B
-A = {1, 2, 3, 4, 5}
-B = {4, 5, 6, 7, 8}
-
-# use - operator on A
-# Output: {1, 2, 3}
-print(A - B)
-print(A.difference(B))
+dct = {"a": 1, "b": 2, "c": 3}
+print(set(dct))
 
 
-# Frozensets
-person = {"name": "John", "age": 23, "sex": "male"}
-
-fSet = frozenset(person)
-print('The frozen set is:', fSet)
-
-# initialize A and B
-A = frozenset([1, 2, 3, 4])
-B = frozenset([3, 4, 5, 6])
-
-# copying a frozenset
-C = A.copy()  # Output: frozenset({1, 2, 3, 4})
-print(C)
-
-# union
-print(A.union(B))  # Output: frozenset({1, 2, 3, 4, 5, 6})
-
-# intersection
-print(A.intersection(B))  # Output: frozenset({3, 4})
-
-# difference
-print(A.difference(B))  # Output: frozenset({1, 2})
-
-# symmetric_difference
-print(A.symmetric_difference(B))  # Output: frozenset({1, 2, 5, 6})
+set1 = {"a", 1, 2, (1, 2)}
+print(set1)
