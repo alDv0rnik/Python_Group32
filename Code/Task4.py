@@ -8,3 +8,24 @@
 а при попытке выполнения непредусмотренной операции – сообщение об ошибке «Неподдерживаемый тип операции!».
 Выведите на экран результаты вызовов функции с точностью до сотых для числовых выражений:
 """
+from typing import Any
+
+OP = "+-*/"
+
+
+def calculate(a: int, b: int, op="+", prec=3) -> Any:
+    if op == "/" and b == 0:
+        return None
+    if op not in OP:
+        return "Неподдерживаемый тип операции!"
+    else:
+        if op == "-":
+            return round(a - b, prec)
+        elif op == "+":
+            return round(a + b, prec)
+        elif op == "/":
+            return round(a / b, prec)
+        return round(a * b, prec)
+
+
+print(calculate(1, 4, op="/"))

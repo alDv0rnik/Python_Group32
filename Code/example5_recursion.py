@@ -1,14 +1,32 @@
 import timeit
+
 import sys
 from functools import lru_cache
 
-# def recursive():
-#     recursive()
-#
-#
-# recursive()
+
+"""
+1. Создать условие выхода из рекурсии
+2. Вызов рекурентной функции
+"""
 
 
+def recursive():
+    recursive()
+
+
+recursive()
+
+
+# def cut_string(s: str) -> str:
+#     print(s)
+#     if len(s) <= 1:
+#         return s
+#     return cut_string(s[:-1])
+#
+#
+# cut_string("Hello")
+
+@lru_cache()
 def fib_iter(n):
     if n == 1:
         return [1]
@@ -19,22 +37,26 @@ def fib_iter(n):
         fibs.append(fibs[-1] + fibs[-2])
     return fibs
 
-setup_ = "from __main__ import fib_iter"
-stmt = "fib_iter(15)"
 
-print(fib_iter(15))
-print(timeit.timeit(setup=setup_, stmt=stmt, number=20000))
+setup_rec = "from __main__ import fib_iter"
+stmt_ = "fib_iter(12)"
+print(fib_iter(12))
+print(timeit.timeit(setup=setup_rec, stmt=stmt_, number=20000))
+
 
 @lru_cache()
 def fib_rec(n):
     if n <= 1:
         return n
-    else:
-        return (fib_rec(n - 1) + fib_rec(n - 2))
+    return (fib_rec(n - 1) + fib_rec(n - 2))
 
 
-setup_ = "from __main__ import fib_rec"
-stmt = "fib_rec(15)"
+setup_rec = "from __main__ import fib_rec"
+stmt_ = "fib_rec(12)"
+print(fib_rec(12))
+print(timeit.timeit(setup=setup_rec, stmt=stmt_, number=20000))
 
-print(fib_rec(15))
-print(timeit.timeit(setup=setup_, stmt=stmt, number=20000))
+
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(1500)
+print(sys.getrecursionlimit())

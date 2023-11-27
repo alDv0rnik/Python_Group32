@@ -8,5 +8,19 @@ score = [
     {'name': 'Price', 'final': 99}
 ]
 
-Используя анонимную функцию отсортируйте словари в порядке возрастания результатов
+Используя анонимную функцию отсортируйте словари
+в порядке возрастания результатов
 """
+score = [
+    {'name': 'Gideon', 'final': 95},
+    {'name': 'Mitchel', 'final': 92},
+    {'name': 'Ilona', 'final': 98},
+    {'name': 'Price', 'final': 99}
+]
+
+
+y = lambda x: x['final']
+print(y(score[0]))
+score.sort(key=lambda x: x['final'])
+
+print(score)
