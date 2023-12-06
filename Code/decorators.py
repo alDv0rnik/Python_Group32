@@ -33,4 +33,11 @@ def slowdown(rate=0.1):
 
 
 def timer(function):
-    pass
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        res = function(*args, **kwargs)
+        end = time.time()
+        print(f"Execution time: {end - start}")
+        return res
+    return wrapper
