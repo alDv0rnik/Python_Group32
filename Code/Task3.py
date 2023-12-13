@@ -10,3 +10,5 @@ p1 = Point(1.5, 1)
 p2 = Point(1.5, 2)
 p1.dist(p2) == 1
 """
+import requests
+

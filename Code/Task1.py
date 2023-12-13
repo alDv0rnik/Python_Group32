@@ -24,3 +24,28 @@ class MoneyBox:
 Примечание:
 Гарантируется, что метод add(self, v) будет вызываться только если can_add(self, v) – True.
 """
+
+
+class MoneyBox:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.num_coins = 0
+
+    def can_add(self, v):
+        if v + self.num_coins > self.capacity:
+            return False
+        return True
+
+    def add(self, v):
+        if self.can_add(v):
+            self.num_coins += v
+        else:
+            print("No more place")
+
+
+money_box = MoneyBox(5)
+money_box.add(2)
+print(money_box.num_coins)
+money_box.add(3)
+print(money_box.num_coins)
+money_box.add(1)
