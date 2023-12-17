@@ -13,9 +13,8 @@ def convert_this(sum_byn, currency):
 
 # if __name__ == '__main__':
 #     import sys
-#     sum_byn = sys.argv[1]
-#     currency = sys.argv[-1]
-#     print(convert_this)
+#     from sys import argv
+#     print(convert_this(int(sys.argv[1]), sys.argv[-1]))
 
 print(convert_this(sum_byn=100, currency='usd'))
 print(convert_this(sum_byn=100, currency='eur'))
