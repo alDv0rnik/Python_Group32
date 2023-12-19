@@ -1,15 +1,13 @@
 class TestClass:
-    count = 0
 
-    def __init__(self, new_attr=0):
-        self._new_attr = new_attr
-        print()
+    def __init__(self, n):
+        self.__n = n
 
 
-print(TestClass().count)
-print(TestClass()._new_attr)
-
-test = TestClass(10)
-print(test._new_attr)
-print(dir())
-
+tc = TestClass(4)
+# print(tc.__n)
+# print(tc._TestClass__n)
+# tc._TestClass__n = 10
+# print(tc._TestClass__n)
+# tc._n = 5
+# print(tc._n)

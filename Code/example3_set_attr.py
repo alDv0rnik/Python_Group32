@@ -1,28 +1,25 @@
 class SomeClass:
-    __slots__ = ('a', '_SomeClass__b')
 
-    def __init__(self, a, b=9):
+    def __init__(self, a):
+        # print(dir())
         self.a = a
-        self.__b = b
+        self.__x = a - 1
 
-    def some_method(self):
-        pass
+    # def get_names(self):
+    #     print(dir())
 
-    # def __setattr__(self, key, value):
-    #     if key in ('a', '_SomeClass__b'):
-    #         self.__dict__[key] = value
-    #     else:
-    #         raise AttributeError
+    def __setattr__(self, key, value):
+        # print(self.__dict__)
+        if key in ('a', '_SomeClass__x'):
+            self.__dict__[key] = value
+        else:
+            raise AttributeError
 
-
-sc = SomeClass(1)
-
-sc.a = 2
-print(sc._SomeClass__b)
-sc.c = "test"
-# sc.b = 5
+print(dir())
+sc = SomeClass(4)
+# sc.get_names()
+print(sc.__dict__)
+# sc.__x = 5
 # print(sc.__dict__)
-print(sc.__slots__)
-# sc2 = SomeClass(57)
-# print(sc2.__dict__)
-
+# sc.c = "test"
+# print(sc.__dict__)
