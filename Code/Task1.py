@@ -15,3 +15,52 @@
 Отправьте одного из солдат первого героя следовать за ним.
 Выведите на экран идентификационные номера этих двух юнитов.
 """
+import random
+import uuid
+
+
+TEAMS = ["red", "blue"]
+
+
+class BaseUnit:
+    def __init__(self):
+        self.__id = self.set_id()
+        self.__team = None
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def team(self):
+        return self.__team
+
+    @staticmethod
+    def set_id():
+        return str(uuid.uuid4())
+
+
+class Soldier(BaseUnit):
+
+    @property
+    def team(self):
+        return self.__team
+
+    def set_team(self):
+        self.__team = random.choice(TEAMS)
+
+    @staticmethod
+    def follow_the_hero(hero: object) -> str:
+        return f"Following {hero.name}"
+
+
+sold = Soldier()
+sold.set_team()
+print(sold.id)
+print(sold.team)
+
+# base_unit = BaseUnit()
+# base_unit1 = BaseUnit()
+# print(base_unit.id)
+# print(base_unit1.id)
+

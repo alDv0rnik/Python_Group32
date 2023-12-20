@@ -16,6 +16,7 @@ class B(A):
 
 class C(B):
     def __init__(self):
+        B.__init__(self)
         print("c init")
 
     def method_for_C(self):
