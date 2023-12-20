@@ -19,10 +19,10 @@ class TextLoader:
         return self.__clean_string
 
     def set_clean_text(self, text):
-        self.__clean_string = self.__text_processor.get_clean_string(text=text)
+        self.__clean_string = self.__text_processor.get_clean_string(text)
 
 
 test_string = "Python, Java, Golang!"
 text_loader = TextLoader()
 text_loader.set_clean_text(test_string)
-print(text_loader.clean_string)
+# print(text_loader.clean_string)
