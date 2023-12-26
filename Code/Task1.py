@@ -40,6 +40,25 @@ class BaseUnit:
         return str(uuid.uuid4())
 
 
+class Hero(BaseUnit):
+    def __init__(self, name, team):
+        super().__init__()
+        self.__name = name
+        self.__team = team
+        self.__level = 0
+
+    @property
+    def team(self):
+        return self.__team
+
+    @property
+    def name(self):
+        return self.__name
+
+    def level_up(self):
+        self.__level += 1
+
+
 class Soldier(BaseUnit):
 
     @property
@@ -50,14 +69,41 @@ class Soldier(BaseUnit):
         self.__team = random.choice(TEAMS)
 
     @staticmethod
-    def follow_the_hero(hero: object) -> str:
+    def follow_the_hero(hero: Hero) -> str:
         return f"Following {hero.name}"
 
 
-sold = Soldier()
-sold.set_team()
-print(sold.id)
-print(sold.team)
+def main():
+    hero_1 = Hero("Iron Man", "red")
+    print(f"I'm {hero_1.name}, {hero_1.id}")
+    hero_2 = Hero("Cap", "blue")
+    print(f"I'm {hero_2.name}, {hero_2.id}")
+    reds, blues = [], []
+
+    for i in range(10):
+        soldier = Soldier()
+        soldier.set_team()
+        if soldier.team == "red":
+            reds.append(soldier)
+        else:
+            blues.append(soldier)
+
+    if len(reds) > len(blues):
+        hero_1.level_up()
+        print(f"NEW LEVEL! for {hero_1.name}")
+    elif len(reds) < len(blues):
+        hero_2.level_up()
+        print(f"NEW LEVEL! for {hero_2.name}")
+
+    print("Follow your hero!")
+    soldier_1 = random.choice(reds)
+    print(soldier_1.follow_the_hero(hero_1))
+    print(soldier_1.id)
+    print(hero_1.id)
+
+
+if __name__ == '__main__':
+    main()
 
 # base_unit = BaseUnit()
 # base_unit1 = BaseUnit()
