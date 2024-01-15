@@ -12,7 +12,7 @@ class BaseRailcar(ABC):
         pass
 
     @abstractmethod
-    def load_cargo(self):
+    def load_cargo(self, *args):
         pass
 
 
@@ -23,5 +23,5 @@ class BasePlatform(ABC):
         pass
 
     @abstractmethod
-    def load_cargo(self):
+    def load_cargo(self, *args):
         pass

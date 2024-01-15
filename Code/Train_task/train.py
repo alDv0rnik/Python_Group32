@@ -20,7 +20,7 @@ class SingletonMeta(type):
 
 class Train(metaclass=SingletonMeta):
     def __init__(self):
-        self.__capacity = 1500
+        self.__capacity = 150
         self.__cars = []
 
     def get_cars(self):

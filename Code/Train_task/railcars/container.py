@@ -8,8 +8,8 @@ class Container(BaseRailcar):
         self.__height = 2
         self.__wight = 2.5
         self.__length = 6
-        self.__net_weight = 20
-        self.__capacity = 70 # in tons
+        self.__weight = 20
+        self.__max_weight = 70 # in tons
         self.__vol = self.__calculate_vol()
 
     def get_vol(self):
@@ -19,9 +19,14 @@ class Container(BaseRailcar):
         return self.__length * self.__height * self.__wight
 
     def get_weight(self):
-        pass
+        if (m := self.__weight / 1000) > self.__max_weight:
+            return self.__max_weight
+        return m
 
     def load_cargo(self, material):
-        self.__net_weight += material.get_density() * self.__vol
+        self.__weight += material.get_density() * self.__vol
+
+    def __repr__(self):
+        return f"{self.__name}: {self.get_weight()} tons"
 
 
