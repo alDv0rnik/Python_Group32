@@ -1,26 +1,20 @@
-import time
+class User:
+    def __init__(self, age):
+        self.__age = age
+
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        if type(age) is int and age >= 0:
+            self.__age = age
 
 
-def timer(function):
-    def wrapper(*args, **kwargs):
-        start = time.time()
-        res = function(*args, **kwargs)
-        end = time.time()
-        print(f"Execution time: {end - start}")
-        return res
-    return wrapper
+u = User(15)
+u.set_age(-1)
+print(u.get_age())
+u.set_age("1")
+print(u.get_age())
+u.set_age(1)
+print(u.get_age())
 
-
-@timer
-def fibo(num):
-    s1 = 1
-    s0 = 0
-    if num == 2:
-        return s1
-    if num > 2:
-        for i in range(num - 1):
-            s0, s1 = s1, s0 + s1
-    return s0
-
-
-print(fibo(int(input())))

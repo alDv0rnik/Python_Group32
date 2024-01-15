@@ -1,24 +1,22 @@
-def reverse_list(active=True):
-    def decor(func):
-        def wrapper(*args, **kwargs):
-            if active:
-                res = func(*args, **kwargs)
-                return res[::-1]
-            return func(*args, **kwargs)
-        return wrapper
-    return decor
+class KgToPounds:
+    def __init__(self, kg):
+        self.__kg = kg
+
+    def to_pounds(self):
+        pass
+
+    def set_kg(self, new_kg):
+        if isinstance(new_kg, (int, float)):
+            self.__kg = new_kg
+        else:
+            print('Килограммы должны быть числом')
+
+    @property
+    def kg(self):
+        return self.__kg
 
 
-@reverse_list(active=True)
-def transform(list1, list2):
-    result = []
-    for i in list1:
-        for j in list2:
-            result.append(f"{i} + {j}")
-    return result
-
-
-lst1 = [i for i in range(5)]
-lst2 = [j for j in range(5)]
-
-print(transform(lst1, lst2))
+cls = KgToPounds(20)
+print(cls.kg)
+cls.set_kg(40)
+print(cls.kg)

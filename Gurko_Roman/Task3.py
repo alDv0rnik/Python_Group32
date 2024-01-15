@@ -1,20 +1,19 @@
-def call_once(func):
-    res = []
-    def wrapper(*args, **kwargs):
-        nonlocal res
-        res.append(func(*args, **kwargs))
-        return res[0]
-    return wrapper
+class HistoryDict(dict):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__history = []
+
+    def set_value(self, key, value):
+        self[key] = value
+        self.__history.append(key)
+        if len(self.__history) > 10:
+            self.__history.pop(0)
+
+    def get_history(self):
+        return self.__history
 
 
-@call_once
-def sum_of_numbers(a, b):
-    return a + b
-
-
-print(sum_of_numbers(13, 42))
-print(sum_of_numbers(13, 42))
-print(sum_of_numbers(999, 100))
-print(sum_of_numbers(999, 100))
-print(sum_of_numbers(999, 100))
-print(sum_of_numbers(999, 100))
+d = HistoryDict({"foo": 42})
+d.set_value("bar", 43)
+print(d.get_history())
+print(d)

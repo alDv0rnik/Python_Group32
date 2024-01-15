@@ -1,15 +1,12 @@
-def do_twice(func):
-    def wrapper(*args, **kwargs):
-        res_1 = func(*args, **kwargs)
-        res_2 = func(*args, **kwargs)
-        return res_1, res_2
-    return wrapper
+class Soda:
+    def __init__(self, topping=None):
+        self.__topping = topping
+
+    def show_my_drink(self):
+        return f"Газировка с {self.__topping}ом" if self.__topping else "Вода с газом"
 
 
-@do_twice
-def get_sum(*args):
-    return sum(args)
-
-
-res1 = get_sum(1, 2, 3, 4, 5)
-print(*res1)
+s_with = Soda("вишневый топпинг")
+print(s_with.show_my_drink())
+s_without = Soda()
+print(s_without.show_my_drink())
