@@ -8,26 +8,44 @@
 и добавьте блок обработки ошибок try-except
 
 """
-class ExceptionPrintData(Exception):
-    def __str__(self):
-        return "Error of printing data"
 
-# Exception("Printer is not available")
+
+class PrintDataSendError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return f"An error while handling data {self.msg}"
+
+
+class Printer:
+    def __init__(self):
+        self.available = False
+
+    def is_available(self):
+        return True if self.available else False
+
+
 class PrintData:
-    def print(self, data):
-        if not self.send_to_print():
-            raise ExceptionPrintData
-        print(f"печать {data}")
+    def __init__(self):
+        self.printer = Printer()
+
+    def print_data(self):
+        print("Printing data")
+
+    def send_data(self):
+        if self.printer.is_available():
+            self.send_to_print()
+        else:
+            raise PrintDataSendError("Printer unavailable")
 
     def send_to_print(self):
-        return False
+        print("Sending data...")
 
 
-p = PrintData()
 try:
-    p.print(123)
-except ExceptionPrintData as err:
-    print(f"Printing error: {err}")
-
-
-
+    print_data = PrintData()
+    print_data.send_data()
+    print_data.print_data()
+except PrintDataSendError as err:
+    print(err)

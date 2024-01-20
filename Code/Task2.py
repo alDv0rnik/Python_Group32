@@ -4,12 +4,24 @@
 Реализация функции для проверки четности числа. Обработайте различные исключения для этой ошибки.
 Пользовательские исключения должны быть получены из пользовательского CustomException (не из BaseException)
 """
-from exceptions.custom_exceptions import WrongTypeOfArgument
+from exceptions.my_exceptions import *
 
 
-def check_numbers(num: int) -> bool:
-    if not isinstance(num, int):
-        raise WrongTypeOfArgument
-    return num % 2 == 0
+def check_even(num: int):
+    if isinstance(num, int):
+        return True if num % 2 == 0 else False
+    elif isinstance(num, str):
+        raise CustomExceptionStringError()
+    elif isinstance(num, float):
+        raise CustomExceptionFloatError()
 
-print(check_numbers(4))
+
+try:
+    i = input("Enter your number: ")
+    check_even(i)
+except CustomExceptionFloatError as err:
+    print(err)
+except CustomExceptionStringError as err_:
+    print(err_)
+except ValueError as err:
+    print(err)
