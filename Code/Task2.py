@@ -13,6 +13,13 @@ LamborghiniLuxury Sports Cars1963-Present
 ToyotaMass-Market Cars1937-Present
 """
 
+file_path = "cars.txt"
 
 
+def read_lines(lines: int, file: str) -> list:
+    with open(file, "r") as file_:
+        list_of_cars = list(map(lambda x: x.strip("\n"), file_.readlines()))
+        return list_of_cars[-lines:]
 
+
+print(*read_lines(3, file_path), sep="\n")

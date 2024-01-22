@@ -24,3 +24,9 @@ def most_common_words(filepath, number_of_words=3):
 print(most_common_words('lorem_ipsum.txt'))
 >>> ['donec', 'etiam', 'aliquam']
 ```
+
+#### Task 3
+У вас есть список `users = [‘Arthur’, ‘Kate’, ‘Alice’, ‘Mike’]`. Сделайте список
+словарей, в каждом из которых будет ключ name, куда вы подставите имя из списка, и age -
+случайное число от 1 до 99. Выполните сериализацию при помощи модуля `pickle` и запишите данные в
+файл в формате dat.
