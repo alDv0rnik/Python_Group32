@@ -26,15 +26,17 @@ filename = "text.txt"
 
 
 @contextmanager
-def open_file(filename):
+def open_file(filename, mode):
     try:
-        file_ = open(filename, "r")
+        file_ = open(filename, mode)
+        if mode == "r":
+           yield file_.read()
     except FileNotFoundError as err:
         print(err)
     else:
-        return file_
+        file_.close()
 
 
-with open_file(filename) as file:
-    print(file.read())
+with open_file(filename, "r") as file:
+    print(file)
 
