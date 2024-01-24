@@ -1,0 +1,15 @@
+{
+  "first_name": "Eugene",
+  "last_name": "Petrov",
+  "birthday": {
+    "value": "29/09/86",
+    "date": true
+  },
+  "hired_at": "29/09/06 12:30:05",
+  "hobbies": [
+    "guitar",
+    "cars",
+    "mountains",
+    "adventures"
+  ]
+}
