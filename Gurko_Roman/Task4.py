@@ -1,22 +1,45 @@
-class KgToPounds:
-    def __init__(self, kg):
-        self.__kg = kg
-
-    def to_pounds(self):
-        pass
-
-    def set_kg(self, new_kg):
-        if isinstance(new_kg, (int, float)):
-            self.__kg = new_kg
-        else:
-            print('Килограммы должны быть числом')
+class Material:
+    def __init__(self, name, density):
+        self.__name = name
+        self.__density = density
 
     @property
-    def kg(self):
-        return self.__kg
+    def density(self):
+        return self.__density
+
+    @property
+    def name(self):
+        return self.__name
+
+    def get_material(self):
+        return f"{self.name};{self.density}"
 
 
-cls = KgToPounds(20)
-print(cls.kg)
-cls.set_kg(40)
-print(cls.kg)
+class Subject:
+    def __init__(self, name, material: Material, volume):
+        self.__name = name
+        self.__material = material
+        self.__volume = volume
+
+    @property
+    def material(self):
+        return self.__material
+
+    @material.setter
+    def material(self, material: Material):
+        self.__material = material
+
+    def __get_mass(self):
+        return self.__volume * self.material.density
+
+    def get_subject(self):
+        return f"{self.__name};{self.material.name};{self.material.density};{self.__volume};{self.__get_mass()}"
+
+
+if __name__ == '__main__':
+    steel = Material("steel",7850.0)
+    copper = Material("copper", 8500.0)
+    wire = Subject("wire", steel, 0.03)
+    print(wire.get_subject())
+    wire.material = copper
+    print(wire.get_subject())
