@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "type": "Dog",
+    "owner": "Joe Doe"
+  },
+  {
+    "id": "2",
+    "type": "Cat",
+    "owner": "Jane Smith"
+  },
+  {
+    "id": "3",
+    "type": "Parrot",
+    "owner": "Johnny"
+  }
+]

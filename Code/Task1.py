@@ -10,6 +10,22 @@
     </items>
 </data>
 
-На выходе программы должны получить список {'attrib': 'value'}. Сохраните полученный список в json формате
+На выходе программы должны получить список {'attrib': 'value'}.
+Сохраните полученный список в json формате
 
 """
+import json
+from xml.etree import ElementTree as ET
+
+
+root = ET.parse("data/books.xml")
+elements = root.findall("book")
+books = []
+
+for element in elements:
+    books.append(
+        {"category": element.attrib.get("category")}
+    )
+
+with open("data/books.json", "w") as file:
+    json.dump(books, file)

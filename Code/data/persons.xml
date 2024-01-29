@@ -1,0 +1,17 @@
+<persons>
+    <person id="1">
+        <name lang="eng">John</name>
+        <surname lang="eng">Connor</surname>
+        <age>15</age>
+    </person>
+    <person id="2">
+        <name lang="eng">Sarah</name>
+        <surname lang="eng">Connor</surname>
+        <age>33</age>
+    </person>
+    <person id="3">
+        <name lang="eng">Arnold</name>
+        <surname lang="eng">T-800</surname>
+        <age>45</age>
+    </person>
+</persons>

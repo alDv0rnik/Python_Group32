@@ -13,4 +13,11 @@
     <year>2005</year>
     <price>29.99</price>
   </book>
+
+  <book category="scince fiction">
+    <title lang="en">I Robot</title>
+    <author>A.Azimov</author>
+    <year>1990</year>
+    <price>19.99</price>
+  </book>
 </bookstore>
