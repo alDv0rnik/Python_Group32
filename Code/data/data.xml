@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<data>
+    <items>
+        <item name="item1">10</item>
+        <item name="item2">20</item>
+        <item name="item3">30</item>
+        <item name="item4">40</item>
+    </items>
+</data>

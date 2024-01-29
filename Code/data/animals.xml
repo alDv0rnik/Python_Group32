@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<animals>
+    <animal id="1">
+        <type>Dog</type>
+        <age>3</age>
+        <owner>Joe Doe</owner>
+    </animal>
+    <animal id="2">
+        <type>Cat</type>
+        <age>5</age>
+        <owner>Jane Smith</owner>
+    </animal>
+    <animal id="3">
+        <type>Parrot</type>
+        <age>1</age>
+        <owner>Johnny</owner>
+    </animal>
+</animals>
